@@ -813,7 +813,7 @@
         ]
       }
     },
-    "accessMode": {
+    "accessModes": {
       "type": "array",
       "items": {
         "enum": [
