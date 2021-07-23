@@ -1627,7 +1627,7 @@
       "type": "number",
       "format": "date"
     },
-    "changelog": {
+    "changeLog": {
       "type": "array",
       "items": {
         "type": "string",
