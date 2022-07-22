@@ -630,26 +630,26 @@
     "multimediaPair": {
       "type": "object",
       "properties": {
-        "multimediaName": {
-          "type": "string",
-          "maxLength": 100
-        },
         "multimediaURL": {
            "type": "string",
            "format": "uri"
+        },
+        "multimediaName": {
+          "type": "string",
+          "maxLength": 100
         }
       }
   },
-    "usecasePair": {
+    "useCasePair": {
       "type": "object",
       "properties": {
-        "usecaseName": {
-          "type": "string",
-          "maxLength": 100
-        },
-        "usecaseURL": {
+        "useCaseURL": {
           "type": "string",
           "format": "uri"
+        },
+         "useCaseName": {
+          "type": "string",
+          "maxLength": 100
         }
       }
   },
@@ -663,7 +663,7 @@
       "type": "string",
       "maxLength": 20
     },
-     "catalogueID": {
+     "catalogueid": {
       "type": "string",
       "maxLength": 20
     },
@@ -1582,16 +1582,16 @@
         "$ref": "#/definitions/contact"
       }
     },
-     "multimediaPairs": {
+     "multimedia": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/multimediaPair"
       }
     },
-     "usecasePairs": {
+     "useCases": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/usecasePair"
+        "$ref": "#/definitions/useCasePair"
       }
     },
     "helpdeskEmail": {
@@ -2068,7 +2068,7 @@
     "id",
     "name",
     "abbreviation",
-    "catalogueID",
+    "catalogueid",
     "resourceOrganisation",
     "webpage",
     "description",
