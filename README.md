@@ -1,3 +1,3 @@
 # EOSC-Schema
 
-Current Issue: V3
+Current Issue: V4
