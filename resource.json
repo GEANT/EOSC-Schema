@@ -627,11 +627,45 @@
       ]
     }
   },
+    "multimediaPair": {
+      "type": "object",
+      "properties": {
+        "multimediaURL": {
+           "type": "string",
+           "format": "uri"
+        },
+        "multimediaName": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+  },
+    "useCasePair": {
+      "type": "object",
+      "properties": {
+        "useCaseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+         "useCaseName": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+  },
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "maxLength": 30
+    },
+    "abbreviation": {
+      "type": "string",
+      "maxLength": 20
+    },
+     "catalogueid": {
+      "type": "string",
+      "maxLength": 20
     },
     "name": {
       "type": "string",
@@ -661,20 +695,6 @@
     "logo": {
       "type": "string",
       "format": "uri"
-    },
-    "multimedia": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "format": "uri"
-      }
-    },
-    "useCases": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "format": "uri"
-      }
     },
     "scientificDomains": {
       "type": "array",
@@ -1086,7 +1106,12 @@
           "EH",
           "YE",
           "ZM",
-          "ZW"
+          "ZW",
+          "WW",
+          "AH",
+          "EO",
+          "EU",
+          "EZ"
         ]
       }
     },
@@ -1557,6 +1582,18 @@
         "$ref": "#/definitions/contact"
       }
     },
+     "multimedia": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/multimediaPair"
+      }
+    },
+     "useCases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/useCasePair"
+      }
+    },
     "helpdeskEmail": {
       "type": "string",
       "format": "email"
@@ -1646,11 +1683,88 @@
         "type": "string"
       }
     },
-    "relatedPlatforms": {
+     "relatedPlatforms": {
       "type": "array",
       "items": {
         "type": "string",
-        "maxLength": 50
+        "enum": [
+        	"related_platform-ala",
+"related_platform-ands",
+"related_platform-artportalen",
+"related_platform-arxiv",
+"related_platform-avp",
+"related_platform-aws",
+"related_platform-bluecloud",
+"related_platform-cccs",
+"related_platform-ccdc",
+"related_platform-cdl",
+"related_platform-cessda",
+"related_platform-collabwith",
+"related_platform-crossref",
+"related_platform-dariahteach",
+"related_platform-datacite",
+"related_platform-dice",
+"related_platform-doab",
+"related_platform-ds",
+"related_platform-edugain",
+"related_platform-eduteams",
+"related_platform-egi",
+"related_platform-egiace",
+"related_platform-egifc",
+"related_platform-einfracz",
+"related_platform-eirgspp",
+"related_platform-elg",
+"related_platform-elixir",
+"related_platform-emodnetc",
+"related_platform-enc",
+"related_platform-envri",
+"related_platform-eol",
+"related_platform-eoscl",
+"related_platform-eoscn",
+"related_platform-eoscp",
+"related_platform-eudatcdi",
+"related_platform-evs",
+"related_platform-garrcp",
+"related_platform-gatep",
+"related_platform-gbif",
+"related_platform-geonames",
+"related_platform-geoss",
+"related_platform-grin",
+"related_platform-hal",
+"related_platform-hamelin",
+"related_platform-infnc",
+"related_platform-ispot",
+"related_platform-jisc",
+"related_platform-metacentrum",
+"related_platform-natusfera",
+"related_platform-oc",
+"related_platform-openairee",
+"related_platform-openairem",
+"related_platform-openairerg",
+"related_platform-pc",
+"related_platform-pnp",
+"related_platform-pogo",
+"related_platform-rjb",
+"related_platform-scopus",
+"related_platform-seadatanet",
+"related_platform-share",
+"related_platform-sshom",
+"related_platform-surf",
+"related_platform-tb",
+"related_platform-tdp",
+"related_platform-tf",
+"related_platform-tibp",
+"related_platform-tnomadl",
+"related_platform-tpg",
+"related_platform-tripleh",
+"related_platform-tsd",
+"related_platform-tubitakcc",
+"related_platform-vlab",
+"related_platform-zbwice",
+"related_platform-zenodo"
+
+
+        ]
       }
     },
     "fundingBody": {
@@ -1665,6 +1779,7 @@
           "funding_body-anr",
           "funding_body-apvv",
           "funding_body-arc",
+          "funding_body-af",
           "funding_body-arrs",
           "funding_body-awi",
           "funding_body-bbsrc",
@@ -1729,6 +1844,7 @@
           "funding_body-mecr",
           "funding_body-mesr",
           "funding_body-mestd",
+          "funding_body-meys",
           "funding_body-mgrt",
           "funding_body-mineco",
           "funding_body-mistra",
@@ -1812,6 +1928,7 @@
           "funding_program-crea",
           "funding_program-cust2020",
           "funding_program-dci2020",
+          "funding_program-ddoict",
           "funding_program-e4a",
           "funding_program-eafrd",
           "funding_program-eafrd2020",
@@ -1825,6 +1942,7 @@
           "funding_program-emff2020",
           "funding_program-eni",
           "funding_program-erdf",
+          "funding_program-esaeoep",
           "funding_program-esc",
           "funding_program-esf",
           "funding_program-esp2017",
@@ -1857,9 +1975,12 @@
           "funding_program-iter",
           "funding_program-just",
           "funding_program-life2020",
+          "funding_program-driltah",
           "funding_program-loan2020",
+          "funding_program-lripmeys",
           "funding_program-mfa",
           "funding_program-nd",
+          "funding_program-nucleu",
           "funding_program-other",
           "funding_program-outreg",
           "funding_program-peri2020",
@@ -1946,6 +2067,8 @@
   "required": [
     "id",
     "name",
+    "abbreviation",
+    "catalogueid",
     "resourceOrganisation",
     "webpage",
     "description",
